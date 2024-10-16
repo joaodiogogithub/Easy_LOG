@@ -1,0 +1,227 @@
+body{}
+
+.container {
+    margin-top: 0px;
+}
+
+.myButton {
+    background-color:#0099ff;
+    border-radius:28px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+}
+
+.myButton:hover {
+    background-color:#89d0ff ;
+}
+
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.p{
+  margin-top: 20px;
+  color:white;
+  font-size: 20px;
+}
+
+.view_product{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow: auto;
+    height: 400px;
+}
+
+.bigtext{
+    text-align: center;
+    font-size: 50px;
+    color: black;
+}
+
+.btn{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.btn:hover{
+    background-color: #ffc96b;
+}   
+
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #dededf;
+    background-color: #eceff1;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+
+.create_product{
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+.create_product h1{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.create_product form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.create_product form input{
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.create_product form button{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #0099ff;
+    color: black;
+    font-size: 20px;
+}
+
+.create_product form button:hover{
+    background-color: #57bcff;
+}
+
+.font_nav{
+    font-size: 20px;
+    color: white;
+    text-decoration:none;
+    padding: 10px;
+}
+
+.font_nav:hover{
+    background-color: #3c3c3cac;
+    color: white;
+}
+
+.home_icon:hover{
+    transform: scale(1.1);
+}
+
+.font_nav:active{
+    background-color: #57bcff;
+}
+
+
+.hero-section {
+    background-image: url('img/bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+@keyframes move {
+    from {
+        left: 5%;
+    }
+    to {
+        left: 85%;
+    }
+  }
+  
+  
+  /* assign animation to ball element */
+  .ball {
+    animation: 8s move;
+    animation-iteration-count: infinite;
+  }
+  
+  /* base styles */
+  
+  body {
+    text-align: center;
+    background: #fafafa;
+    position: relative;
+  }
+  
+  .ball {
+    width: 5%;
+    padding-bottom: 5%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+    box-shadow: -3px 5px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    top: 100px;
+    left: 5%;
+  }
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004d99;
+}

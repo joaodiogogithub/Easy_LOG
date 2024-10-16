@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block page_title%} Deletar{%endblock page_title %}
+
+{%block content%}
+<style>
+    .title_act{
+        padding:25px;
+        text-align: center;
+        font-size: 50px;
+        color: orange;
+    }
+
+    .org{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .org a{
+        font-size: 30px;
+    }
+
+    .org button{
+        font-size: 30px;
+    }
+</style>
+
+<form method='POST' style="padding:50px;">
+        {% csrf_token %}
+        <h1 style="text-align: center; font-size: 30px; color: black;">Tem certeza que deseja deletar o cadastro de {{estoque.materia_prima}}?</h1>
+        <section class="org">
+            <button type="submit" class="btn btn-danger" style="height:60px;">Yes</button>
+            <a href="{% url 'estoque_list' %}" class="btn btn-primary"> No </a>
+        </section>
+    </form>
+{%endblock%}

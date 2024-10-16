@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+    {% block page_title %}CRM{% endblock page_title %}
+    {% block content %}
+
+            <section class="create_product">
+                <h1>Criar / Editar</h1>
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button type="submit" class="btn bg-dark font text-white">Done</button>
+                </form>
+                
+            </section>
+    
+{% endblock %}
+
+
