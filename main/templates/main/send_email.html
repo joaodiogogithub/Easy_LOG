@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+    {% block page_title %}Email{% endblock page_title %}
+    {% block content %}
+
+            <section class="create_product">
+                <form method="POST">
+
+                    {% csrf_token %}
+                        
+                    <p>Send email to {{ client.name}}</p>
+                    <p style="display:flex">Subject:<input type="text" name="subject" class="form-control" required></p>
+                    <h1>Message</h1>
+                    <textarea name="message" class="form-control" required></textarea>
+                    <input type="hidden" name="email" value="{{ client.email }}">
+
+
+                    <button type="submit" class="btn bg-dark font text-white">Done</button>
+                </form>
+                
+            </section>
+    
+{% endblock %}

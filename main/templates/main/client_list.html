@@ -7,14 +7,15 @@
         <h1 class="bigtext" style="padding:30px;">Client list</h1>
         <section class="table_component">
             {% if client_list %}
-                <table class="glass">
+                <table class="list_box">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
+                            <th class="teste" scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Number</th>
                             <th scope="col">Address</th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -29,6 +30,7 @@
                                 <td>{{ client.address }}</td>     
                                 <td><a href="update/{{ client.pk }}" class="btn bg-dark font text-white" style="height:40px;">edit</a></td>
                                 <td><a href="{% url 'client_delete' pk=client.pk%}" class="btn bg-dark font text-white" style="height:40px;"> delete</a></td>
+                                <td><a href="{% url 'client_mail' pk=client.pk%}" class="btn bg-dark font text-white" style="height:40px;"> mail</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>

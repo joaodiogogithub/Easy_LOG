@@ -1,4 +1,6 @@
-body{}
+body{
+    
+}
 
 .container {
     margin-top: 0px;
@@ -65,10 +67,11 @@ body{}
 .table_component {
     overflow: auto;
     width: 100%;
+    position: relative;
 }
 
 .table_component table {
-    border: 1px solid #dededf;
+    border: 1px solid #ffffff;
     height: 100%;
     width: 100%;
     table-layout: fixed;
@@ -83,30 +86,34 @@ body{}
 }
 
 .table_component th {
-    border: 1px solid #dededf;
-    background-color: #eceff1;
+    border: 1px solid #dededf00;
+    background-color: #eceff100;
+    border-bottom: 1px solid #000000;
     color: #000000;
     padding: 5px;
 }
 
 .table_component td {
-    border: 1px solid #dededf;
-    background-color: #ffffff;
+    border: 1px solid #dededf00;
+    background-color: #ffffff00;
+    border-bottom: 1px solid #000000;
     color: #000000;
     padding: 5px;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .create_product{
+    display: flex;
     width: 600px;
     height: 100%;
     margin: 0 auto;
     padding: 10px;
-
 }
 
-.create_product h1{
-    text-align: center;
-    font-size: 30px;
+.create_product p{
+    text-align: left;
+    font-size: 40px;
     color: black;
 }
 
@@ -122,19 +129,6 @@ body{}
     border-radius: 5px;
     width: 100%;
     border: 1px solid #ccc;
-}
-
-.create_product form button{
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #0099ff;
-    color: black;
-    font-size: 20px;
-}
-
-.create_product form button:hover{
-    background-color: #57bcff;
 }
 
 .font_nav{
@@ -225,3 +219,4 @@ body{}
     background-color: #0056b3;
     border-color: #004d99;
 }
+

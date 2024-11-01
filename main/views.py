@@ -2,10 +2,10 @@ from django.shortcuts import render
 from .models import Stock, Client, Product
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+import smtplib
 
 def home(request):
     return render(request, 'main/home.html')
-
 # Cliente=============================================
 
 class ClientListView(ListView):
@@ -27,6 +27,13 @@ class ClientDeleteView(DeleteView):
     model = Client
     fields = ['name']
     success_url = reverse_lazy('client_list')
+
+class ClientSendEmailView(UpdateView):
+    model = Client
+    fields = ['name', 'email']
+    success_url = reverse_lazy('client_list')
+    template_name = 'main/send_email.html'
+
 
 # Estoque=============================================
 

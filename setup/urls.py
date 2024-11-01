@@ -16,16 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import ClientListView, ClientUpdateView, ClientDeleteView, ClientCreateView, StockListView, StockUpdateView, StockCreateView, StockDeleteView, home, ProductListView, ProductUpdateView, ProductCreateView, ProductDeleteView
+from main.views import home
+from main.views import ClientListView, ClientUpdateView, ClientDeleteView, ClientCreateView, ClientSendEmailView
+from main.views import StockListView, StockUpdateView, StockCreateView, StockDeleteView
+from main.views import ProductListView, ProductUpdateView, ProductCreateView, ProductDeleteView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home , name='home'),
-
     path('client/', ClientListView.as_view(), name='client_list'),
     path('client/create/', ClientCreateView.as_view(), name='client_create'),
     path('client/update/<int:pk>', ClientUpdateView.as_view(), name='client_update'),
     path('client/delete/<int:pk>', ClientDeleteView.as_view(), name='client_delete'),
+    path('client/send_email/<int:pk>', ClientSendEmailView.as_view() , name='client_mail'),
 
     path('stock/', StockListView.as_view(), name='stock_list'),
     path('stock/update/<int:pk>', StockUpdateView.as_view(), name='stock_update'),
