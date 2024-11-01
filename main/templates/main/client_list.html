@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+    {% block page_title%}client list{% endblock page_title%}
+    
+    {% block content %}
+
+        <h1 class="bigtext" style="padding:30px;">Client list</h1>
+        <section class="table_component">
+            {% if client_list %}
+                <table class="glass">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Number</th>
+                            <th scope="col">Address</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for client in client_list %}
+                            <tr>
+                                <th scope="row">{{ client.pk }}</th>
+                                <td>{{ client.name }}</td>
+                                <td>{{ client.email }}</td>
+                                <td>{{ client.number }}</td>
+                                <td>{{ client.address }}</td>     
+                                <td><a href="update/{{ client.pk }}" class="btn bg-dark font text-white" style="height:40px;">edit</a></td>
+                                <td><a href="{% url 'client_delete' pk=client.pk%}" class="btn bg-dark font text-white" style="height:40px;"> delete</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+            {% endif %}
+        </section>
+        <a href="{% url 'client_create'%}" class="btn bg-dark font text-white" style="orange">Register new client ?</a>
+
+{% endblock %}

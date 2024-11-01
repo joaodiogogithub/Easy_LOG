@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Estoque, Cliente, Produto
+from .models import Stock, Client, Product
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
@@ -8,67 +8,67 @@ def home(request):
 
 # Cliente=============================================
 
-class ClienteListView(ListView):
-    model = Cliente
+class ClientListView(ListView):
+    model = Client
 
-class ClienteUpdateView(UpdateView):
-    model = Cliente
-    fields = ['nome', 'email', 'telefone', 'endereco']
-    success_url = reverse_lazy('cliente_list')
+class ClientUpdateView(UpdateView):
+    model = Client
+    fields = ['name', 'email', 'number', 'address']
+    success_url = reverse_lazy('client_list')
     template_name = 'main/register.html'
 
-class ClienteCreateView(CreateView):
-    model = Cliente
-    fields = ['nome', 'email', 'telefone', 'endereco']
-    success_url = reverse_lazy('cliente_list')
+class ClientCreateView(CreateView):
+    model = Client
+    fields = ['name', 'email', 'number', 'address']
+    success_url = reverse_lazy('client_list')
     template_name = 'main/register.html'
 
-class ClienteDeleteView(DeleteView):
-    model = Cliente
-    fields = ['nome']
-    success_url = reverse_lazy('cliente_list')
+class ClientDeleteView(DeleteView):
+    model = Client
+    fields = ['name']
+    success_url = reverse_lazy('client_list')
 
 # Estoque=============================================
 
-class EstoqueListView(ListView):
-    model = Estoque
+class StockListView(ListView):
+    model = Stock
 
-class EstoqueUpdateView(UpdateView):
-    model = Estoque
-    fields = ['materia_prima', 'quantidade']
-    success_url = reverse_lazy('estoque_list')
+class StockUpdateView(UpdateView):
+    model = Stock
+    fields = ['materia', 'quanty']
+    success_url = reverse_lazy('stock_list')
     template_name = 'main/register.html'
 
-class EstoqueCreateView(CreateView):
-    model = Estoque
-    fields = ['materia_prima', 'quantidade']
-    success_url = reverse_lazy('estoque_list')
+class StockCreateView(CreateView):
+    model = Stock
+    fields = ['materia', 'quanty']
+    success_url = reverse_lazy('stock_list')
     template_name = 'main/register.html'
 
-class EstoqueDeleteView(DeleteView):
-    model = Estoque
-    fields = ['materia_prima']
-    success_url = reverse_lazy('estoque_list')
+class StockDeleteView(DeleteView):
+    model = Stock
+    fields = ['materia']
+    success_url = reverse_lazy('stock_list')
 
 
 # Produto=============================================
 
-class ProdutoListView(ListView):
-    model = Produto
+class ProductListView(ListView):
+    model = Product
 
-class ProdutoUpdateView(UpdateView):
-    model = Produto
-    fields = ['nome', 'descricao', 'preco', 'quantidade']
-    success_url = reverse_lazy('produto_list')
+class ProductUpdateView(UpdateView):
+    model = Product
+    fields = ['name', 'description', 'price', 'quanty']
+    success_url = reverse_lazy('product_list')
     template_name = 'main/register.html'
 
-class ProdutoCreateView(CreateView):
-    model = Produto
-    fields = ['nome', 'descricao', 'preco', 'quantidade']
-    success_url = reverse_lazy('produto_list')
+class ProductCreateView(CreateView):
+    model = Product
+    fields =  ['name', 'description', 'price', 'quanty']
+    success_url = reverse_lazy('product_list')
     template_name = 'main/register.html'
 
-class ProdutoDeleteView(DeleteView):
-    model = Produto
-    fields = ['nome']
-    success_url = reverse_lazy('produto_list')
+class ProductDeleteView(DeleteView):
+    model = Product
+    fields = ['name']
+    success_url = reverse_lazy('product_list')

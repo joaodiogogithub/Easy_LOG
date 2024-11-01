@@ -16,24 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import ClienteListView, ClienteUpdateView, ClienteDeleteView, ClienteCreateView, EstoqueListView, EstoqueUpdateView, EstoqueCreateView, EstoqueDeleteView, home, ProdutoListView, ProdutoUpdateView, ProdutoCreateView, ProdutoDeleteView
+from main.views import ClientListView, ClientUpdateView, ClientDeleteView, ClientCreateView, StockListView, StockUpdateView, StockCreateView, StockDeleteView, home, ProductListView, ProductUpdateView, ProductCreateView, ProductDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home , name='home'),
 
-    path('cliente/', ClienteListView.as_view(), name='cliente_list'),
-    path('cliente/create/', ClienteCreateView.as_view(), name='cliente_create'),
-    path('cliente/update/<int:pk>', ClienteUpdateView.as_view(), name='cliente_update'),
-    path('cliente/delete/<int:pk>', ClienteDeleteView.as_view(), name='cliente_delete'),
+    path('client/', ClientListView.as_view(), name='client_list'),
+    path('client/create/', ClientCreateView.as_view(), name='client_create'),
+    path('client/update/<int:pk>', ClientUpdateView.as_view(), name='client_update'),
+    path('client/delete/<int:pk>', ClientDeleteView.as_view(), name='client_delete'),
 
-    path('estoque/', EstoqueListView.as_view(), name='estoque_list'),
-    path('estoque/update/<int:pk>', EstoqueUpdateView.as_view(), name='estoque_update'),
-    path('estoque/create/', EstoqueCreateView.as_view(), name='estoque_create'),
-    path('estoque/delete/<int:pk>', EstoqueDeleteView.as_view(), name='estoque_delete'),
+    path('stock/', StockListView.as_view(), name='stock_list'),
+    path('stock/update/<int:pk>', StockUpdateView.as_view(), name='stock_update'),
+    path('stock/create/', StockCreateView.as_view(), name='stock_create'),
+    path('stock/delete/<int:pk>', StockDeleteView.as_view(), name='stock_delete'),
 
-    path('produto/', ProdutoListView.as_view(), name='produto_list'),
-    path('produto/update/<int:pk>', ProdutoUpdateView.as_view(), name='produto_update'),
-    path('produto/create/', ProdutoCreateView.as_view(), name='produto_create'),
-    path('produto/delete/<int:pk>', ProdutoDeleteView.as_view(), name='produto_delete'),
+    path('product/', ProductListView.as_view(), name='product_list'),
+    path('product/update/<int:pk>', ProductUpdateView.as_view(), name='product_update'),
+    path('product/create/', ProductCreateView.as_view(), name='product_create'),
+    path('product/delete/<int:pk>', ProductDeleteView.as_view(), name='product_delete'),
 ]

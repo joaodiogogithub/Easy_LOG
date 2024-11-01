@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block page_title%} delete product {%endblock page_title %}
+{% block page_title%} delete{%endblock page_title %}
 
 {%block content%}
 <style>
@@ -28,10 +28,10 @@
 
 <form method='POST' style="padding:50px;">
         {% csrf_token %}
-        <h1 style="text-align: center; font-size: 30px; color: black;">Tem certeza que deseja deletar o cadastro de {{produto.nome}}?</h1>
+        <h1 style="text-align: center; font-size: 30px; color: black;">Are you sure you want to delete your registration of {{stock.materia}}?</h1>
         <section class="org">
             <button type="submit" class="btn btn-danger" style="height:60px;">Yes</button>
-            <a href="{% url 'produto_list' %}" class="btn btn-primary"> No </a>
+            <a href="{% url 'stock_list' %}" class="btn btn-primary"> No </a>
         </section>
     </form>
 {%endblock%}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+    {% block page_title%}Stock{% endblock page_title%}
+    
+    {% block content %}
+
+        <h1 class="bigtext" style="padding:30px;">Raw material stock</h1>
+        <section class="table_component">
+            {% if stock_list %}
+                <table class="glass">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Material</th>
+                            <th scope="col">Quanty</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for stock in stock_list %}
+                            <tr>
+                                <th scope="row">{{ stock.pk }}</th>
+                                <td>{{ stock.materia }}</td>
+                                <td>{{ stock.quanty }}</td>
+                                <td><a href="update/{{ stock.pk }}" class="btn bg-dark font text-white" style="height:40px;">edit</a></td>
+                                <td><a href="{% url 'stock_delete' pk=stock.pk%}" class="btn bg-dark font text-white" style="height:40px;"> delete</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+            {% endif %}
+        </section>
+        <a href="{% url 'stock_create'%}" class="btn bg-dark font text-white">Register a new material ?</a>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+    {% block page_title%} Stock{% endblock page_title%}
+    
+    {% block content %}
+
+        <h1 class="bigtext" style="padding:30px;">Product stock</h1>
+        <section class="table_component">
+            {% if product_list %}
+                <table class="glass">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quanty</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in product_list %}
+                            <tr>
+                                <th scope="row">{{ product.pk }}</th>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.description }}</td>
+                                <td>{{ product.price }}</td>
+                                <td>{{ product.quanty }}</td>
+                                <td><a href="update/{{ product.pk }}" class="btn bg-dark font text-white" style="height:40px;">edit</a></td>
+                                <td><a href="{% url 'product_delete' pk=product.pk%}" class="btn bg-dark font text-white" style="height:40px;"> delete</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+            {% endif %}
+        </section>
+        <a href="{% url 'product_create'%}" class="btn bg-dark font text-white">Register a new product ?</a>
+
+{% endblock %}
