@@ -2,7 +2,7 @@
 # Easy Log
 
 
-Management software for small businesses (Pre-Alpha 0.1v)
+Management software for small businesses (Alpha 0.1v)
 
 
 
